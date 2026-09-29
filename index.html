@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter Rain</title>
+  <meta name="description" content="하늘에서 글자가 비처럼 내리고, 쌓이고, 와이퍼가 쓸어내는 인터랙티브 웹사이트">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="stage" aria-label="글자 비 애니메이션"></canvas>
+
+  <header class="title">
+    <h1>LETTER<br>RAIN</h1>
+    <p>글자가 내리는 밤</p>
+  </header>
+
+  <details class="panel" id="panel" open>
+    <summary>설정</summary>
+
+    <div class="row">
+      <label for="rate">비 세기</label>
+      <input type="range" id="rate" min="0" max="60" value="18">
+    </div>
+
+    <div class="row">
+      <span class="label">글자</span>
+      <div class="seg" id="charset">
+        <button type="button" data-set="latin" class="on">ABC</button>
+        <button type="button" data-set="hangul">가나다</button>
+        <button type="button" data-set="digits">123</button>
+        <button type="button" data-set="mix">MIX</button>
+      </div>
+    </div>
+
+    <form class="row msg" id="msgForm" autocomplete="off">
+      <input type="text" id="msg" maxlength="40" placeholder="메시지를 떨어뜨려 보세요">
+      <button type="submit">↓</button>
+    </form>
+
+    <div class="row actions">
+      <button type="button" id="wipeBtn" class="wipe">와이퍼 <kbd>Space</kbd></button>
+      <label class="toggle">
+        <input type="checkbox" id="autoWipe" checked>
+        <span>자동</span>
+      </label>
+    </div>
+
+    <div class="stats">
+      <span>쌓인 글자 <b id="piled">0</b></span>
+      <span>쓸려간 글자 <b id="swept">0</b></span>
+    </div>
+
+    <p class="hint">키보드를 두드리면 그 글자가 떨어지고,<br>화면을 클릭하면 글자가 터져 나와요.</p>
+  </details>
+
+  <script src="script.js"></script>
+</body>
+</html>
