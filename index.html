@@ -29,10 +29,10 @@
     <div class="row">
       <span class="label">글자</span>
       <div class="seg" id="charset">
-        <button type="button" data-set="latin" class="on">ABC</button>
+        <button type="button" data-set="latin">ABC</button>
         <button type="button" data-set="hangul">가나다</button>
         <button type="button" data-set="digits">123</button>
-        <button type="button" data-set="mix">MIX</button>
+        <button type="button" data-set="mix" class="on">MIX</button>
       </div>
     </div>
 
@@ -50,13 +50,15 @@
     </div>
 
     <div class="stats">
-      <span>쌓인 글자 <b id="piled">0</b></span>
-      <span>쓸려간 글자 <b id="swept">0</b></span>
+      <span>글자 <b id="count">0</b></span>
+      <span>채움 <b id="fill">0%</b></span>
+      <span>와이퍼 <b id="hits">0</b></span>
     </div>
 
-    <p class="hint">키보드를 두드리면 그 글자가 떨어지고,<br>화면을 클릭하면 글자가 터져 나와요.</p>
+    <p class="hint">키보드를 두드리면 그 글자가 떨어지고,<br>화면을 클릭하면 글자가 터져 나와요.<br>글자는 화면의 60%까지만 쌓이고, 오래된 글자부터 사라져요.</p>
   </details>
 
+  <script src="matter.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

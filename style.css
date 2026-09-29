@@ -220,5 +220,6 @@ input[type="range"] {
     width: min(260px, calc(100vw - 32px));
     padding: 10px 12px 12px;
   }
+  .panel:not([open]) { width: auto; }
   .hint { display: none; }
 }
